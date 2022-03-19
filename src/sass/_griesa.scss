@@ -1,0 +1,130 @@
+.griesa {
+  --color-primary: #e68e40;
+  --color-secondary: #ffffd9;
+  --color-accent: #ffdaad;
+  background: url(../image/back3.png);
+  color: var(--color-secondary);
+  text-align: center;
+
+  &__header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  &__gallery {
+    display: grid;
+    grid-template-columns: 18rem auto 18rem;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+
+    &__img {
+      max-width: 100%;
+      display: block;
+    }
+    &__left {
+      text-align: left;
+    }
+    &__right {
+      text-align: right;
+    }
+    &__center {
+      display: grid;
+      place-items: center;
+
+      @include mediaQuery($bp-big) {
+        & img {
+          max-width: 60rem;
+          width: 100%;
+        }
+      }
+    }
+    &__subheading {
+      color: var(--color-accent);
+    }
+    &__text {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-top: 0.5em;
+    }
+
+    @include mediaQuery($bp-md) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, min-content);
+      justify-content: center;
+      align-items: center;
+
+      &__right,
+      &__left {
+        order: 1;
+        text-align: center;
+        padding-block: 2rem;
+
+        &::after {
+          content: "";
+          display: block;
+          height: 2px;
+          background-color: rgba($color: #000000, $alpha: 0.5);
+          margin: 2rem;
+        }
+      }
+    }
+  }
+
+  hr {
+    height: 2px;
+    width: min(60rem, 100%);
+    margin: 5rem auto;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba($color: #000000, $alpha: 0.8);
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.5);
+  }
+
+  &__quote {
+    font-size: 2.4rem;
+    font-style: italic;
+  }
+  &__anchor {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    margin: 2rem 0 1.5rem;
+  }
+  &__anchor-link {
+    font-size: 1.6rem;
+    font-weight: 600;
+    font-style: italic;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-white-text);
+    letter-spacing: 01px;
+    transition: all 0.2s;
+
+    &:hover,
+    &:focus {
+      color: var(--color-accent);
+    }
+  }
+
+  .glide__bullets {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    gap: 1.3rem;
+  }
+  .glide__bullet {
+    background-color: var(--color-white-text);
+    padding: 0.7rem;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0.5rem 5px 0 rgba($color: #000000, $alpha: 0.5);
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &--active,
+    &:hover {
+      background-color: var(--color-accent);
+    }
+  }
+}

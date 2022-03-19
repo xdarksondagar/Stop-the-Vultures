@@ -1,0 +1,104 @@
+.about {
+  --color-primary: #e68e40;
+  --color-secondary: #ffffd9;
+  --color-accent: #34658e;
+  background: url(../image/back3.png);
+  color: var(--color-secondary);
+
+  &__header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  &__gallery {
+    display: flex;
+    justify-content: space-between;
+
+    &__right,
+    &__left {
+      max-width: 13rem;
+    }
+
+    &__right {
+      text-align: right;
+    }
+    &__right &__img--small {
+      transform: rotateY(180deg);
+    }
+
+    &__text {
+      font-size: 2.2rem;
+      font-weight: 700;
+
+      span {
+        font-size: 3.5rem;
+        display: block;
+      }
+    }
+
+    @include mediaQuery($bp-big) {
+      &__img--big {
+        max-width: 35rem;
+      }
+    }
+
+    @include mediaQuery($bp-md) {
+      display: grid;
+      grid-template-rows: repeat(2, min-content);
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+
+      &__center {
+        grid-row: 1 / 2;
+        grid-column: 1 / -1;
+        justify-self: center;
+
+        & img {
+          width: 100%;
+        }
+      }
+      &__right,
+      &__left {
+        grid-row: 2 / 3;
+        display: flex;
+        align-items: center;
+        justify-self: center;
+        max-width: max-content;
+
+        & img {
+          object-fit: contain;
+        }
+      }
+      &__right &__img--small {
+        order: 1;
+      }
+    }
+
+    @include mediaQuery($bp-sm) {
+      &__img--small {
+        display: none;
+      }
+    }
+  }
+
+  &__content {
+    text-align: center;
+    &__header {
+      margin-block: 6rem;
+    }
+  }
+  &__info-wrapper {
+    display: flex;
+    gap: 3rem;
+
+    @include mediaQuery($bp-md) {
+      flex-direction: column;
+      grid-template: 4rem;
+    }
+  }
+  &__info {
+    flex: 1;
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+}

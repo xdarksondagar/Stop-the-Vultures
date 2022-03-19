@@ -1,0 +1,52 @@
+.footer {
+  --color-accent: #ffdaad;
+  color: var(--color-white-text);
+  background: url(../image/back3.png);
+  padding: 5rem 0;
+
+  span {
+    color: var(--color-accent);
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 20rem auto;
+    gap: 2rem;
+
+    @include mediaQuery($bp-md) {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+      align-items: center;
+      text-align: center;
+    }
+  }
+  &__text {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-top: 1em;
+  }
+  &__hr {
+    height: 0.5px;
+    background-color: rgba($color: #000, $alpha: 0.5);
+    box-shadow: 0 0.5px 0 0 rgba($color: #fff, $alpha: 0.5);
+    margin: 3rem 0;
+  }
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+
+    @include mediaQuery($bp-md) {
+      justify-content: center;
+    }
+  }
+  &__brand-intro {
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  &__copyright {
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+}

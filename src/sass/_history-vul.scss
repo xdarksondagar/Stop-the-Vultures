@@ -1,0 +1,51 @@
+.history-vul {
+  --color-primary: #a43c37;
+  --color-secondary: #544b57;
+  background-image: url(../image/back2.png);
+
+  &__header {
+    text-align: center;
+
+    &__line {
+      display: block;
+      margin: 4rem auto;
+    }
+  }
+
+  &__templates {
+    margin-top: 6rem;
+    display: grid;
+    grid-template-rows: repeat(3, min-content);
+    row-gap: 5rem;
+  }
+  &__template {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+
+    @include mediaQuery($bp-md) {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    &__text {
+      color: var(--color-secondary);
+      font-size: 2rem;
+    }
+
+    &__link {
+      color: var(--color-primary);
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    &:nth-of-type(2) > &__img {
+      order: 1;
+
+      @include mediaQuery($bp-md) {
+        order: 0;
+      }
+    }
+  }
+}
