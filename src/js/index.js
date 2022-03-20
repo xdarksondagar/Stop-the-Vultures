@@ -1,6 +1,9 @@
 // Aos
 import AOS from "aos";
-AOS.init();
+AOS.init({
+  once: true,
+  duration: 1000,
+});
 
 // SLIDER
 // Glide slider
